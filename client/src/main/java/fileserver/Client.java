@@ -1,5 +1,6 @@
 package fileserver;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -161,27 +162,30 @@ public class Client {
         return result;
     }
 
+    private static boolean validateRootFolderDownload(String rootFolderDownload) {
+        File file = new File(rootFolderDownload);
+        if (!file.exists()) {
+            log.info("--------" + rootFolderDownload + " is not exist. Please create it and configure the value in FileServer/client/build.gradle");
+            return false;
+        }
+        return true;
+    }
+
     public static void main(String[] args) throws Exception {
-        if(!validateArgsValue(args)) {
+        if(!validateArgsValue(args) || !validateRootFolderDownload(args[3].trim())) {
             return;
         }
         String serverIp = "127.0.0.1";
         int portCommand = 3001;
         int portData = 3002;
-        if(args.length > 0) {
-            serverIp = args[0].trim();
-            if (!ValidateIPV4.isValidIPV4(serverIp)) {
-                log.error("Server Ip Address is invalid");
-                return;
-            }
+        serverIp = args[0].trim();
+        if (!ValidateIPV4.isValidIPV4(serverIp)) {
+            log.error("Server Ip Address is invalid");
+            return;
         }
-        if (args.length > 1) {
-            portCommand = Integer.parseInt(args[1].trim());
-        }
-        if(args.length > 2) {
-            portData = Integer.parseInt(args[2].trim());
-        }
-        String rootFolderDownload = args[3];
+        portCommand = Integer.parseInt(args[1].trim());
+        portData = Integer.parseInt(args[2].trim());
+        String rootFolderDownload = args[3].trim();
         Socket socket = new Socket(serverIp, portCommand);
         Client client = new Client(socket, serverIp, portCommand, portData, rootFolderDownload);
         client.proceed();

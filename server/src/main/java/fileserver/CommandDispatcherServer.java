@@ -69,19 +69,23 @@ public class CommandDispatcherServer {
         return result;
     }
 
+    private static boolean validateRootFolder(String rootFolder) {
+        File file = new File(rootFolder);
+        if (!file.exists()) {
+            log.info("--------" + rootFolder + " is not exist. Please create it and configure the value in FileServer/server/build.gradle");
+            return false;
+        }
+        return true;
+    }
+
     public static void main(String[] args) throws Exception {
-        if(!validateArgsValue(args)) {
+        if(!validateArgsValue(args) || !validateRootFolder(args[2].trim())) {
             return;
         }
         int portCommand = 3001;
         int portDownload = 3002;
-        if (args.length > 0) {
-
-            portCommand = Integer.parseInt(args[0].trim());
-        }
-        if (args.length > 1) {
-            portDownload = Integer.parseInt(args[1].trim());
-        }
+        portCommand = Integer.parseInt(args[0].trim());
+        portDownload = Integer.parseInt(args[1].trim());
 
         CommandDispatcherServer commandDispatcherServer = new CommandDispatcherServer(portCommand, args[2].trim());
         commandDispatcherServer.startDownloadServer(portDownload);

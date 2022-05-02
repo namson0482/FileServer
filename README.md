@@ -6,23 +6,10 @@
 - JDK 11.0.13 or later. 
 - Port 3001 and 3002 of computer must be available. You can customize in FileServer/server/build.gradle and FileServer/client/build.gradle
 
-
-## Project can be executed as follows:
-
-- Open a new terminal and go to project folder as FileServer
-- gradle :server:clean :server:build -x test
-- gradle :server:run
-- Open a new terminal and go to project folder as FileServer
-- gradle :client:clean :client:build -x test
-- gradle :client:run
-- type: index => view all files from server (It will list out all files in folder FileServer/files)
-- type: hyperion360 => Unknown command
-- type: get foxit.tar.gz, son.tar.gz => It will download 2 files and save into folder FileServer/downloads. You can download multiple files.  Use commas to separate file and file groups in a simple series of two or more items such as get file_name, file_name ...
-
 ## Project are configured as follows:
 
 Server:
-- 3001 is for command. 
+- 3001 is for command.
 - 3002 is for data.
 - '/home/son.vunam/Projects/workspace_intellij/FileServer/files' => server will list out all files in this folder.
 - All values of server above can be configured by yourself. You just open file FileServer/server/build.gradle and change the value that you want to use
@@ -33,4 +20,14 @@ Client:
 - /home/son.vunam/Projects/workspace_intellij/FileServer/downloads => client will store downloaded file in this folder
 - All values of client above can be configured by yourself. You just open file FileServer/client/build.gradle and change the value that you want.
 
+## After you configure all values in 2 files FileServer/server/build.gradle and FileServer/client/build.gradle. Project can be executed as follows:
 
+- Open a new terminal and go to project folder as FileServer
+- gradle :server:clean :server:build -x test
+- gradle :server:run
+- Open a new terminal and go to project folder as FileServer
+- gradle :client:clean :client:build -x test
+- gradle :client:run
+- type: index => view all files from server (It will list out all files in folder FileServer/files)
+- type: hyperion360 => Unknown command
+- type: get foxit.tar.gz, son.tar.gz => It will download 2 files and save into folder FileServer/downloads. You can download multiple files.  Use commas to separate file and file groups in a simple series of two or more items such as get file_name, file_name ...
