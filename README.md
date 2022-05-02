@@ -15,6 +15,7 @@ Server:
 - All values of server above can be configured by yourself. You just open file FileServer/server/build.gradle and change the value that you want to use
 
 Client:
+- 127.0.0.1 Ip Address of Server File.
 - 3001 is for command. This value must have same a value with server side
 - 3002 is for data. This value must have same a value with server side
 - /home/son.vunam/Projects/workspace_intellij/FileServer/downloads => client will store downloaded file in this folder
@@ -28,6 +29,16 @@ Client:
 - Open a new terminal and go to project folder as FileServer
 - gradle :client:clean :client:build -x test
 - gradle :client:run
+- type: index => view all files from server (It will list out all files in folder FileServer/files)
+- type: hyperion360 => Unknown command
+- type: get foxit.tar.gz, son.tar.gz => It will download 2 files and save into folder FileServer/downloads. You can download multiple files.  Use commas to separate file and file groups in a simple series of two or more items such as get file_name, file_name ...
+
+## If you want to run the application in Intellij
+- Step 1: Import project such as Gradle.
+- Step 2: Execute fileserver.CommandDispatcherServer as per image below (pay attention for program arguments):
+![](images/2.png)
+- Step 3: Execute fileserver.Client as per image below (pay attention for program arguments):
+![](images/3.png)
 - type: index => view all files from server (It will list out all files in folder FileServer/files)
 - type: hyperion360 => Unknown command
 - type: get foxit.tar.gz, son.tar.gz => It will download 2 files and save into folder FileServer/downloads. You can download multiple files.  Use commas to separate file and file groups in a simple series of two or more items such as get file_name, file_name ...
