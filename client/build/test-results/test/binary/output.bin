@@ -1,0 +1,13 @@
+515:55:02.909 [Test worker] INFO fileserver.Client - 
+
+c15:55:02.917 [Test worker] INFO fileserver.Client - ----------------------------------------------
+I15:55:02.917 [Test worker] INFO fileserver.Client - List files on server
+c15:55:02.917 [Test worker] INFO fileserver.Client - ----------------------------------------------
+515:55:02.917 [Test worker] INFO fileserver.Client - 
+1.docx
+2.pdf
+
+c15:55:02.918 [Test worker] INFO fileserver.Client - ----------------------------------------------
+c15:55:02.918 [Test worker] INFO fileserver.Client - ----------------------------------------------
+515:55:02.918 [Test worker] INFO fileserver.Client - 
+

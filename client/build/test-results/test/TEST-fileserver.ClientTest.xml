@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="fileserver.ClientTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-05-02T08:55:01" hostname="ctc-lapt-079" time="1.178">
+  <properties/>
+  <testcase name="Test sendMessage" classname="fileserver.ClientTest" time="1.178"/>
+  <system-out><![CDATA[15:55:02.909 [Test worker] INFO fileserver.Client - 
+
+15:55:02.917 [Test worker] INFO fileserver.Client - ----------------------------------------------
+15:55:02.917 [Test worker] INFO fileserver.Client - List files on server
+15:55:02.917 [Test worker] INFO fileserver.Client - ----------------------------------------------
+15:55:02.917 [Test worker] INFO fileserver.Client - 
+1.docx
+2.pdf
+
+15:55:02.918 [Test worker] INFO fileserver.Client - ----------------------------------------------
+15:55:02.918 [Test worker] INFO fileserver.Client - ----------------------------------------------
+15:55:02.918 [Test worker] INFO fileserver.Client - 
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
