@@ -21,7 +21,7 @@ Client:
 - /home/son.vunam/Projects/workspace_intellij/FileServer/downloads => client will store downloaded file in this folder
 - All values of client above can be configured by yourself. You just open file FileServer/client/build.gradle and change the value that you want.
 
-## After you configure all values in 2 files FileServer/server/build.gradle and FileServer/client/build.gradle. Project can be executed as follows:
+## After you configure all values in 2 files FileServer/server/build.gradle and FileServer/client/build.gradle. Project can be executed in terminal as follows:
 
 - Open a new terminal and go to project folder as FileServer
 - gradle :server:clean :server:build -x test
@@ -33,7 +33,7 @@ Client:
 - type: hyperion360 => Unknown command
 - type: get foxit.tar.gz, son.tar.gz => It will download 2 files and save into folder FileServer/downloads. You can download multiple files.  Use commas to separate file and file groups in a simple series of two or more items such as get file_name, file_name ...
 
-## If you want to run the application in Intellij
+## A other option, if you want to run the application in Intellij
 - Step 1: Import project such as Gradle.
 - Step 2: Execute fileserver.CommandDispatcherServer as per image below (pay attention for program arguments => 3001 3002 /home/son.vunam/Projects/workspace_intellij/FileServer/files):
 ![](images/2.png)
