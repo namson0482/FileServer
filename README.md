@@ -4,7 +4,7 @@
 
 - Gradle 7.4.2 or later. Use this command to check gradle version: gradle -v
 - JDK 11.0.13 or later. 
-- Port 3001 and 3002 of computer must be available. You can customize in FileServer/server/build.gradle and FileServer/client/build.gradle
+- Port 3001 and 3002 of computer must be available. You can customize them in FileServer/server/build.gradle and FileServer/client/build.gradle
 
 ## Project are configured as follows:
 
@@ -42,3 +42,7 @@ Client:
 - type: index => view all files from server (It will list out all files in folder FileServer/files)
 - type: hyperion360 => Unknown command
 - type: get foxit.tar.gz, son.tar.gz => It will download 2 files and save into folder FileServer/downloads. You can download multiple files.  Use commas to separate file and file groups in a simple series of two or more items such as get file_name, file_name ...
+
+## Note:
+- I only test this application on Linux - Ubuntu, but I believe it can execute as well on window.
+- Please pay attention. Example: If you want to configure c:\files for folder in server then you must use this value c:/files. It is same for folder in client. If you want to configure c:\downloads for folder to store downloaded files in client then you must use this value c:/downloads
