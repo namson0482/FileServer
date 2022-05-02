@@ -61,7 +61,7 @@ public class CommandDispatcherServer {
             result = false;
         }
         log.info("--------------------------------------------------");
-        log.info("Syntax: java fileserver.Client 127.0.0.1 3001 3002 /home/son.vunam/Projects/workspace_intellij/FileServer/downloads");
+        log.info("Arguments is: 127.0.0.1 3001 3002 /home/son.vunam/Projects/workspace_intellij/FileServer/downloads");
         log.info("First Arg: Server Port Command.");
         log.info("Second Arg: Server Port Data.");
         log.info("Third Arg: Server will list all files in this directory");

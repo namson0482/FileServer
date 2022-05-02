@@ -56,6 +56,7 @@ public class Client {
         ExecutorService executor = Executors.newFixedThreadPool(10);
         String[] listFiles = msg.substring(3).trim().split(",");
         CountDownLatch countDownLatch = new CountDownLatch(listFiles.length);
+        boolean await = false;
         for (String fileName : listFiles) {
             fileName = fileName.trim();
             CommandLine clientCommandLine = new CommandLine(CommandLine.TYPE_EXEC, "get", fileName);
@@ -69,9 +70,12 @@ public class Client {
             DownloadFileHandlerThread downloadFileHandlerThread =
                 new DownloadFileHandlerThread(fileName, length, mapFilesDownload, countDownLatch, portData, rootFolderDownload);
             executor.execute(downloadFileHandlerThread);
+            await = true;
         }
-        countDownLatch.await();
-        executor.shutdown();
+        if (await) {
+            countDownLatch.await();
+            executor.shutdown();
+        }
         System.out.println("");
     }
 
@@ -153,7 +157,7 @@ public class Client {
             result = false;
         }
         log.info("--------------------------------------------------");
-        log.info("Syntax: java fileserver.Client 127.0.0.1 3001 3002 /home/son.vunam/Projects/workspace_intellij/FileServer/downloads");
+        log.info("Arguments is: 127.0.0.1 3001 3002 /home/son.vunam/Projects/workspace_intellij/FileServer/downloads");
         log.info("First Arg: Server Ip Address.");
         log.info("Second Arg: Server Port Command.");
         log.info("Third Arg: Server Port Data.");

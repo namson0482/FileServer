@@ -35,9 +35,9 @@ Client:
 
 ## If you want to run the application in Intellij
 - Step 1: Import project such as Gradle.
-- Step 2: Execute fileserver.CommandDispatcherServer as per image below (pay attention for program arguments):
+- Step 2: Execute fileserver.CommandDispatcherServer as per image below (pay attention for program arguments => 3001 3002 /home/son.vunam/Projects/workspace_intellij/FileServer/files):
 ![](images/2.png)
-- Step 3: Execute fileserver.Client as per image below (pay attention for program arguments):
+- Step 3: Execute fileserver.Client as per image below (pay attention for program arguments => 127.0.0.1 3001 3002 /home/son.vunam/Projects/workspace_intellij/FileServer/downloads):
 ![](images/3.png)
 - type: index => view all files from server (It will list out all files in folder FileServer/files)
 - type: hyperion360 => Unknown command
