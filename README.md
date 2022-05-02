@@ -1,13 +1,13 @@
 # File Server
 
-Before run application. You make sure your computer already install tools below:
+## Before run application. You make sure your computer already install tools below:
 
 - Gradle 7.4.2 or later. Use this command to check gradle version: gradle -v
 - JDK 11.0.13 or later. 
 - Port 3001 and 3002 of computer must be available. You can customize in FileServer/server/build.gradle and FileServer/client/build.gradle
 
 
-Project can be executed as follows:
+## Project can be executed as follows:
 
 - Open a new terminal and go to project folder as FileServer
 - gradle :server:clean :server:build -x test
@@ -19,7 +19,7 @@ Project can be executed as follows:
 - type: hyperion360 => Unknown command
 - type: get foxit.tar.gz, son.tar.gz => It will download 2 files and save into folder FileServer/downloads. You can download multiple files.  Use commas to separate file and file groups in a simple series of two or more items such as get file_name, file_name ...
 
-Project are configured as follows:
+## Project are configured as follows:
 
 Server:
 - 3001 is for command. 
