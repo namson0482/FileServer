@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -52,7 +52,7 @@ public class Client {
     }
 
     private void proceedDownloadFile(String msg) throws IOException, ClassNotFoundException, InterruptedException {
-        mapFilesDownload = new HashMap();
+        mapFilesDownload = new Hashtable<>();
         ExecutorService executor = Executors.newFixedThreadPool(10);
         String[] listFiles = msg.substring(3).trim().split(",");
         CountDownLatch countDownLatch = new CountDownLatch(listFiles.length);
