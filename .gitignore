@@ -1,5 +1,7 @@
 # Compiled class file
 *.class
+client/build/*.*
+server/build/*.*
 
 # Log file
 *.log
